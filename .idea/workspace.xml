@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="88999a8b-f6b2-4623-9016-9281ff641539" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/HeaderComponent/Rank1Weekly.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Container/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/WvwKills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/KillLeaderboard/WvwKills.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/services.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/services.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yaks-services/services.js" beforeDir="false" afterPath="$PROJECT_DIR$/yaks-services/services.js" afterDir="false" />
-    </list>
+    <list default="true" id="88999a8b-f6b2-4623-9016-9281ff641539" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -302,12 +293,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1538171463402</updated>
-      <workItem from="1538171465398" duration="22282000" />
+      <workItem from="1538171465398" duration="22493000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22282000" />
+    <option name="totallyTimeSpent" value="22493000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
