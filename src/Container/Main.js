@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 
-import WvwKills from '../Components/WvwKills'
+import WvwKills from '../Components/KillLeaderboard/WvwKills'
 import services from '../Services/services'
 
 class Main extends Component {
@@ -14,6 +14,9 @@ class Main extends Component {
         }
     }
 
+    componentDidMount(){
+        this.loadData()
+    }
     // load by onclick
     async loadData() {
         const response = await services.loadData()
@@ -24,7 +27,9 @@ class Main extends Component {
         })
         this.setState({ data: json });
 
-        console.log(this.state.data)
+
+        //<button onClick={()=>this.loadData()}> Load Leaderboard </button>
+
     }
 
 
@@ -32,7 +37,6 @@ class Main extends Component {
     render(){
         return(
             <div>
-                <button onClick={()=>this.loadData()}> Load Leaderboard </button>
                 <WvwKills
                     wvwTable = {this.state.data}
                 />

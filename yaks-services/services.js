@@ -20,7 +20,7 @@ var mysql = require('mysql')
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'root',
+    password: 'windowwasher1',
     database: 'yaksbend'
 })
 
@@ -29,6 +29,13 @@ var connection = mysql.createConnection({
 
 app.get('/users', function(req,res,next){
     connection.query('SELECT * FROM users WHERE wvwkills IS NOT NULL AND on_yaks=1 ORDER BY wvwkills ASC', function(err, results) {
+        if (err) throw err;
+        res.send((results));
+    })
+});
+
+app.get('/topKiller', function(req,res,next){
+    connection.query('SELECT account_id FROM users ORDER BY wvwkills ASC LIMIT 1', function(err, results) {
         if (err) throw err;
         res.send((results));
     })
