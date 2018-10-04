@@ -35,7 +35,7 @@ app.get('/users', function(req,res,next){
 });
 
 app.get('/topKiller', function(req,res,next){
-    connection.query('SELECT account_id FROM users ORDER BY wvwkills ASC LIMIT 1', function(err, results) {
+    connection.query('SELECT account_id FROM users AND on_yaks=1 ORDER BY wvwkills ASC LIMIT 1', function(err, results) {
         if (err) throw err;
         res.send((results));
     })
