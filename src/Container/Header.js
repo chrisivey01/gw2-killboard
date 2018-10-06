@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 
-
+import RouterWeb from '../Components/Router/RouterWeb'
 import services from '../Services/services'
 import Rank1Weekly from '../Components/HeaderComponent/Rank1Weekly'
 
@@ -33,6 +33,7 @@ class Headers extends Component{
     render(){
         return(
             <div>
+                {/*<RouterWeb/>*/}
                 {this.state.topKillerWeekly != '' ?
                 <Rank1Weekly
                     topKiller = {this.state.topKillerWeekly}

@@ -1,34 +1,59 @@
 import React,{Component} from 'react'
 
-import WvwKills from '../Components/KillLeaderboard/WvwKills'
+//import WvwKills from '../Components/KillLeaderboard/WvwKills'
+// import WeeklyKill from '../Components/WeeklyKill/WeeklyKill'
 import services from '../Services/services'
+import Header from './Header'
+import RouterWeb from '../Components/Router/RouterWeb'
+
+
+
 
 class Main extends Component {
+    constructor() {
+        super()
+        this.state = {
+            totalData: [],
+            data: {
+                id: '',
+                account_id: '',
+                account: '',
+                wvwkills: ''
+            },
+            weekly: [],
+            weeklyData: {
+                account_id: '',
+                api_key: '',
+                current_count: '',
+                id: '',
+                on_yaks: '',
+                prev_count: '',
+                rank: '',
+                user_id: '',
+                weekly_kill_total: '',
+                wvwkills: ''
+            }
 
-    state = {
-        data:{
-            id:'',
-            account_id:'',
-            account:'',
-            wvwkills:''
         }
+        this.loadData = this.loadData.bind(this);
+        this.loadWeeklyData = this.loadWeeklyData.bind(this);
     }
 
-    componentDidMount(){
-        this.loadData()
+
+    async loadData (){
+        let response =  await services.loadData()
+        // const json = await response.json();
+
+        this.setState({totalData: response});
+
     }
-    // load by onclick
-    async loadData() {
-        const response = await services.loadData()
-        const json = await response.json();
-        json.sort((a, b) => b.wvwkills - a.wvwkills)
-        json.map((item, i) =>{
-            item['rank'] = i+1
-        })
-        this.setState({ data: json });
 
+    async loadWeeklyData(){
+        let response = await services.loadWeeklyData()
 
-        //<button onClick={()=>this.loadData()}> Load Leaderboard </button>
+        this.setState({
+            weekly: response
+        });
 
     }
 
@@ -37,9 +62,17 @@ class Main extends Component {
     render(){
         return(
             <div>
-                <WvwKills
-                    wvwTable = {this.state.data}
-                />
+
+                <header className="App-header">
+                    <h1 className="App-title">Yaks Bend WVW Ranks</h1>
+                    <Header/>
+                    <RouterWeb
+                        totalData={this.state.totalData}
+                        weeklyData={this.state.weekly}
+                    loadMasterData={this.loadData}
+                    loadWeeklyData={this.loadWeeklyData}/>
+                </header>
+
             </div>
         )
     }
