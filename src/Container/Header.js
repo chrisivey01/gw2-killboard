@@ -33,6 +33,7 @@ class Headers extends Component{
     render(){
         return(
             <div>
+
                 {/*<RouterWeb/>*/}
                 {this.state.topKillerWeekly != '' ?
                 <Rank1Weekly

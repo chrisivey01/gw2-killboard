@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import WvwKills from '../KillLeaderboard/WvwKills'
 import WeeklyKill from '../WeeklyKill/WeeklyKill'
+import Discord from '../DiscordEmbed/Discord'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
@@ -33,6 +34,8 @@ class RouterWeb extends Component {
                     <Route exact path='/top' render={(props) =>
                         (<WvwKills {...props} totalData={this.props.totalData}/>
                         )}/>
+
+                    <Route exact path='/' component={Discord}/>
                 </div>
             </Router>
         )
