@@ -38,6 +38,11 @@
 
 }
 
+.dropdown-menu{
+  float:none !important;
+  right: 0;
+  left:auto !important;
+}
 
 /*this removes ul/li for in header*/
 .weeklyAndTop{
