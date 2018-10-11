@@ -16,7 +16,7 @@ class RouterWeb extends Component {
         return (
             <Router>
                 <div>
-                    <ul>
+                    <ul className="weeklyAndTop">
                         <li onClick={this.props.loadWeeklyData}>
                             <Link to="/weekly">Weekly Leaderboard</Link>
                         </li>
