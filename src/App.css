@@ -47,8 +47,15 @@
 /*this removes ul/li for in header*/
 .weeklyAndTop{
   list-style: none;
+}
 
+.weeklyAndTop .leaderboards a{
+  color:pink;
+}
 
+.leaderboards:hover{
+  transform:scale(1.5);
+  color:darkblue;
 }
 
 @keyframes moveInLeft{

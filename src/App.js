@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 
 
-import Main from './Container/Main';
+import Main from './Layout/Main';
 
 import './App.css';
 

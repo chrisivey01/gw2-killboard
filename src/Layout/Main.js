@@ -1,7 +1,4 @@
 import React,{Component} from 'react'
-
-//import WvwKills from '../Components/KillLeaderboard/WvwKills'
-// import WeeklyKill from '../Components/WeeklyKill/WeeklyKill'
 import services from '../Services/services'
 import Header from './Header'
 import RouterWeb from '../Components/Router/RouterWeb'

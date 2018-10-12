@@ -4,7 +4,7 @@ import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
 
 
-class WvwKills extends Component {
+class TotalKills extends Component {
 
     render() {
         let wvwKills = this.props.totalData
@@ -21,4 +21,4 @@ class WvwKills extends Component {
     }
 
 }
-export default WvwKills;
+export default TotalKills;

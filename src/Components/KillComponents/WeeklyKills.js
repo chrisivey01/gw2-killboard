@@ -5,7 +5,7 @@ import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
 
 
-class WeeklyKill extends Component {
+class WeeklyKills extends Component {
     render() {
         let wvwKills = this.props.data
 
@@ -20,4 +20,4 @@ class WeeklyKill extends Component {
         )
     }
 }
-    export default WeeklyKill;
+    export default WeeklyKills;
