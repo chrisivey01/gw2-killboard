@@ -45,18 +45,26 @@
 }
 
 /*this removes ul/li for in header*/
-.weeklyAndTop{
-  list-style: none;
+
+.routesContainer{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-.weeklyAndTop .leaderboards a{
-  color:pink;
+.routesContainer .boards{
+  background-color: transparent;
+  border: none;
+  margin: 10px;
+  color:red;
+  font-size:20px;
+  flex-grow:1;
 }
 
-.leaderboards:hover{
-  transform:scale(1.5);
-  color:darkblue;
+.routesContainer .boards:hover{
+  transform: scale(1.25);
 }
+
 
 @keyframes moveInLeft{
   0%{

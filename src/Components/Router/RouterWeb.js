@@ -15,15 +15,15 @@ class RouterWeb extends Component {
     {
         return (
             <Router>
-                <div>
-                    <ul className="weeklyAndTop">
-                        <li className="leaderboards" onClick={this.props.loadWeeklyData}>
-                            <Link to="/weekly">Weekly Leaderboard</Link>
-                        </li>
-                        <li className="leaderboards" onClick={this.props.loadMasterData}>
-                            <Link to="/top">Top Leaderboard</Link>
-                        </li>
-                    </ul>
+                <div className="routes">
+                    <div className="routesContainer">
+                        {/*<button className="boards" onClick={this.props.loadWeeklyData}>*/}
+                            <Link className="boards" onClick={this.props.loadWeeklyData} to="/weekly">Weekly Leaderboard</Link>
+                        {/*</button>*/}
+                        {/*<button className="boards" onClick={this.props.loadMasterData}>*/}
+                            <Link className="boards" onClick={this.props.loadMasterData} to="/top">Top Leaderboard</Link>
+                        {/*</button>*/}
+                    </div>
 
                     <hr/>
 
