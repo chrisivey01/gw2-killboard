@@ -18,7 +18,8 @@
 }
 
 .App-title {
-  font-size: 1.5em;
+    font-size: 1.5em;
+    letter-spacing: 1px;
 
 }
 
@@ -53,12 +54,13 @@
 }
 
 .routesContainer .boards{
-  background-color: transparent;
-  border: none;
-  margin: 10px;
-  color:red;
-  font-size:15px;
-  flex-grow:1;
+    background-color: transparent;
+    border: none;
+    letter-spacing: 1px;
+    margin: 10px;
+    color:red;
+    font-size:15px;
+    flex-grow:1;
 }
 
 .routesContainer .boards:hover{
