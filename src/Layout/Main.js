@@ -61,7 +61,7 @@ class Main extends Component {
             <div>
 
                 <header className="App-header">
-                    <h1 className="App-title">Yaks Bend WVW Ranks</h1>
+                    <h1 className="App-title">Yaks Bend</h1>
                     <Header/>
                     <RouterWeb
                         totalData={this.state.totalData}
