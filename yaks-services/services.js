@@ -29,14 +29,14 @@ var connection = mysql.createConnection({
 
 //get all users and order them by highest to lowest kill totals
 app.get('/users', async function(req,res,next){
-    await connection.query('SELECT * FROM users WHERE wvwkills IS NOT NULL AND on_yaks=1 ORDER BY wvwkills ASC', function(err, results) {
+    await connection.query('SELECT * FROM users WHERE wvwkills IS NOT NULL AND on_yaks=1 OR on_yaks=2 ORDER BY wvwkills ASC', function(err, results) {
         if (err) throw err;
         res.send((results));
     })
 });
 
 app.get('/usersWeekly', async function(req,res,next){
-    await connection.query('SELECT * FROM users WHERE weekly_kill_total IS NOT NULL AND on_yaks=1 ORDER BY weekly_kill_total ASC', function(err, results) {
+    await connection.query('SELECT * FROM users WHERE weekly_kill_total IS NOT NULL AND on_yaks=1 OR on_yaks=2 ORDER BY weekly_kill_total ASC', function(err, results) {
         if (err) throw err;
         res.send((results));
     })
@@ -45,7 +45,7 @@ app.get('/usersWeekly', async function(req,res,next){
 
 //top overall killer
 app.get('/topKiller', function(req,res,next){
-    connection.query('SELECT account_id FROM users where wvwkills is not null AND on_yaks=1 ORDER BY wvwkills DESC LIMIT 1', function(err, results) {
+    connection.query('SELECT account_id FROM users where wvwkills is not null AND on_yaks=1 OR on_yaks=2 ORDER BY wvwkills DESC LIMIT 1', function(err, results) {
         if (err) throw err;
         res.send((results));
     })
@@ -54,7 +54,7 @@ app.get('/topKiller', function(req,res,next){
 
 //get the top weekly killer
 app.get('/topWeekly', function(req,res,next){
-    connection.query('SELECT account_id FROM users WHERE weekly_kill_total IS NOT NULL AND on_yaks=1 ORDER BY weekly_kill_total  DESC LIMIT 1', function(err, results) {
+    connection.query('SELECT account_id FROM users WHERE weekly_kill_total IS NOT NULL AND on_yaks=1 OR on_yaks=2  ORDER BY weekly_kill_total  DESC LIMIT 1', function(err, results) {
         if (err) throw err;
         res.send((results));
     })
