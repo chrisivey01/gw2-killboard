@@ -4,9 +4,10 @@
 
 }
 
+
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 115px;
   padding: 20px;
   color: white;
 
@@ -40,9 +41,11 @@
 }
 
 .dropdown-menu{
-  float:none !important;
-  right: 0;
-  left:auto !important;
+  /**/  /*float:none !important;*/
+    /*right: 0;*/
+    left:20rem !important;
+    position:relative !important;
+/*    left:auto !important;*/
 }
 
 /*this removes ul/li for in header*/
@@ -53,11 +56,12 @@
   justify-content: space-around;
 }
 
+.boards{
+    position:relative;
+    bottom:10px;
+}
 .routesContainer .boards{
-    background-color: transparent;
-    border: none;
     letter-spacing: 1px;
-    margin: 10px;
     color:red;
     font-size:15px;
     flex-grow:1;
@@ -83,4 +87,26 @@
     transform:translate(0);
 
   }
+}
+
+
+.sidebar{
+    float:right;
+    position:relative;
+    z-index:1;
+}
+#builds{
+    display:block;
+}
+
+#builds:hover{
+    display:block;
+    transform: scale(1.25);
+}
+
+.modal-container {
+    position: relative;
+}
+.modal-container .modal, .modal-container .modal-backdrop {
+    position: absolute;
 }

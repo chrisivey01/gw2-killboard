@@ -2,7 +2,7 @@ import React,{Component} from 'react'
 import services from '../Services/services'
 import Header from './Header'
 import RouterWeb from '../Components/Router/RouterWeb'
-
+import Builds from '../Layout/Builds'
 
 
 
@@ -60,6 +60,7 @@ class Main extends Component {
         return(
             <div>
 
+
                 <header className="App-header">
                     <h1 className="App-title">Yaks Bend</h1>
                     <Header/>
@@ -69,6 +70,8 @@ class Main extends Component {
                     loadMasterData={this.loadData}
                     loadWeeklyData={this.loadWeeklyData}/>
                 </header>
+
+                <Builds/>
 
             </div>
         )
