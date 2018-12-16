@@ -129,7 +129,7 @@ class Builds extends Component {
                                 Firebrand: <a id="builds" role="button" onClick={this.loadGuardian} data-toggle="modal">
                                 <img src={guardianLogo}/></a>
                                 DD/DF Elementalist<a id="builds" role="button" onClick={this.loadDDElementalist} data-toggle="modal"> <img
-                                src={mesmerLogo}/></a>
+                                src={elementalistLogo}/></a>
                                 Scourge: <a id="builds" role="button" onClick={this.loadNecro} data-toggle="modal"> <img
                                 src={necromancerLogo}/></a>
                             </div>
