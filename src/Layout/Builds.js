@@ -52,7 +52,7 @@ class Builds extends Component {
     }
 
     loadWarrior = () => {
-        window.location = "http://gw2skills.net/editor/?vlAQJASGW0UI1Zcjf0OgA8A7BewHC-jFSBQBJU9Has/Q+0FohnAgJVCCgLAQOPEAZU5HA-w";
+        window.location = "http://gw2skills.net/editor/?vJAQJASRnUJCF7ilhAWhAM7ilsADvCvhHxIDuCQAQpGk6iBA-jFSBQB4RHQGV+ZSlg0Y/BAcJAynmgc+EASo6PAA-w";
     }
 
     render() {
