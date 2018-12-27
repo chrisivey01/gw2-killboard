@@ -1,112 +1,202 @@
-.App {
-  text-align: center;
-  /*clip-path:polygon(0 0, 100% 0, 100% 85vh, 0 100%)*/
-
-}
-
-
-.App-header {
-  background-color: #222;
-  height: 115px;
-  padding: 20px;
-  color: white;
-
-  animation-name:moveInLeft;
-  animation-duration:3s;
-
-  /*background-image: linear-gradient(#7ed56f, #222222)*/
-
-}
-
-.App-title {
-    font-size: 1.5em;
-    letter-spacing: 1px;
-
-}
-
-.App-intro {
-  font-size: large;
-}
-
-.fontColor{
-  color:black;
-
-}
-
 * {
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
+    color:rgb(215, 218, 220);
+    margin: 0;
+    padding: 0;
+}
+html,body {
+    height:100%;
+}
+#root{
+    height:100%;
+}
+.header{
+    background-color: rgb(26, 26, 27);
+}
+
+.App{
+    background-color: rgb(0, 0, 0);
+    height:100%;
 
 }
 
-.dropdown-menu{
-  /**/  /*float:none !important;*/
-    /*right: 0;*/
-    left:20rem !important;
-    position:relative !important;
-/*    left:auto !important;*/
+.flexContainer{
+    display:flex;
+    justify-content: center;
 }
 
-/*this removes ul/li for in header*/
-
-.routesContainer{
-  display:flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.boards{
-    position:relative;
-    bottom:10px;
-}
-.routesContainer .boards{
-    letter-spacing: 1px;
-    color:red;
-    font-size:15px;
-    flex-grow:1;
-}
-
-.routesContainer .boards:hover{
-  transform: scale(1.25);
-}
-
-
-@keyframes moveInLeft{
-  0%{
-    opacity: 0;
-    transform:translateX(-100px);
-  }
-
-  80%{
-
-  }
-
-  100%{
-    opacity: 1;
-    transform:translate(0);
-
-  }
-}
-
-
-.sidebar{
-    float:right;
-    position:relative;
-    z-index:1;
-}
-#builds{
+.titleTopWeeklyContainer {
     display:block;
+    text-align: center;
+
+}
+.title {
+    display: inline-block;
+    font-size:40px;
+    width:100%;
+    text-align:center;
+}
+
+.killLeader {
+    color: red;
+    display: inline-block;
+    font-size:15px;
+}
+
+#home, #kills, #builds{
+    display:block;
+    width:150px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -o-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    color: rgb(215, 218, 220);
+    font-weight:bolder;
+    font-size:25px;
+}
+
+.textAdjuster{
+    padding:100px;
+}
+
+#home:hover{
+    background-color: #666;
+}
+
+#kills:hover{
+    background-color: #666;
 }
 
 #builds:hover{
-    display:block;
-    transform: scale(1.25);
+    background-color: #666;
 }
 
-.modal-container {
-    position: relative;
+.active{
+    background-color: #666;
 }
-.modal-container .modal, .modal-container .modal-backdrop {
-    position: absolute;
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
+
+.killNavBar{
+    display:flex;
+    justify-content:space-around;
+}
+
+
+/*.App {*/
+  /*text-align: center;*/
+  /*!*clip-path:polygon(0 0, 100% 0, 100% 85vh, 0 100%)*!*/
+
+/*}*/
+
+
+/*.App-header {*/
+  /*background-color: #222;*/
+  /*height: 115px;*/
+  /*padding: 20px;*/
+  /*color: white;*/
+
+  /*animation-name:moveInLeft;*/
+  /*animation-duration:3s;*/
+
+  /*!*background-image: linear-gradient(#7ed56f, #222222)*!*/
+
+/*}*/
+
+/*.App-title {*/
+    /*font-size: 1.5em;*/
+    /*letter-spacing: 1px;*/
+
+/*}*/
+
+/*.App-intro {*/
+  /*font-size: large;*/
+/*}*/
+
+/*.fontColor{*/
+  /*color:black;*/
+
+/*}*/
+
+/** {*/
+  /*margin:0;*/
+  /*padding:0;*/
+  /*box-sizing: border-box;*/
+
+/*}*/
+
+/*.dropdown-menu{*/
+  /*!**!  !*float:none !important;*!*/
+    /*!*right: 0;*!*/
+    /*left:20rem !important;*/
+    /*position:relative !important;*/
+/*!*    left:auto !important;*!*/
+/*}*/
+
+/*!*this removes ul/li for in header*!*/
+
+/*.routesContainer{*/
+  /*display:flex;*/
+  /*flex-direction: row;*/
+  /*justify-content: space-around;*/
+/*}*/
+
+/*.boards{*/
+    /*position:relative;*/
+    /*bottom:10px;*/
+/*}*/
+/*.routesContainer .boards{*/
+    /*letter-spacing: 1px;*/
+    /*color:red;*/
+    /*font-size:15px;*/
+    /*flex-grow:1;*/
+/*}*/
+
+/*.routesContainer .boards:hover{*/
+  /*transform: scale(1.25);*/
+/*}*/
+
+
+/*@keyframes moveInLeft{*/
+  /*0%{*/
+    /*opacity: 0;*/
+    /*transform:translateX(-100px);*/
+  /*}*/
+
+  /*80%{*/
+
+  /*}*/
+
+  /*100%{*/
+    /*opacity: 1;*/
+    /*transform:translate(0);*/
+
+  /*}*/
+/*}*/
+
+
+/*.sidebar{*/
+    /*float:right;*/
+    /*position:relative;*/
+    /*z-index:1;*/
+/*}*/
+/*#builds{*/
+    /*display:block;*/
+/*}*/
+
+/*#builds:hover{*/
+    /*display:block;*/
+    /*transform: scale(1.25);*/
+/*}*/
+
+/*.modal-container {*/
+    /*position: relative;*/
+/*}*/
+/*.modal-container .modal, .modal-container .modal-backdrop {*/
+    /*position: absolute;*/
+/*}*/

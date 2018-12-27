@@ -25,6 +25,14 @@ var connection = mysql.createConnection({
 })
 
 
+app.get('/gears', function( req,res,next){
+    // let uid = req.body.uid
+    // let api = req.body.api
+    connection.query('SELECT * FROM uid_character_gear', (err, results) => {
+        if (err) throw err;
+        res.send(results)
+    })
+})
 
 
 //get all users and order them by highest to lowest kill totals

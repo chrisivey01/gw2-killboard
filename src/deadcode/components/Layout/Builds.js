@@ -1,14 +1,13 @@
 import React, {Component} from 'react'
-import buildLogo from '../Components/Builds/Wvw_fp.jpg'
-import guardianLogo from '../Components/Builds/Guardian_icon.png'
-import elementalistLogo from '../Components/Builds/Elementalist_icon.png'
-import necromancerLogo from '../Components/Builds/Necromancer_icon.png'
-import revenantLogo from '../Components/Builds/Revenant_icon.png'
-import warriorLogo from '../Components/Builds/Warrior_icon.png'
-import mesmerLogo from '../Components/Builds/Mesmer_icon.png'
+import buildLogo from '../components/Builds/Wvw_fp.jpg'
+import guardianLogo from '../components/Builds/Guardian_icon.png'
+import elementalistLogo from '../components/Builds/Elementalist_icon.png'
+import necromancerLogo from '../components/Builds/Necromancer_icon.png'
+import revenantLogo from '../components/Builds/Revenant_icon.png'
+import warriorLogo from '../components/Builds/Warrior_icon.png'
 
 
-import {Modal, Button} from 'react-bootstrap'
+import {Button, Modal} from 'react-bootstrap'
 
 class Builds extends Component {
 
@@ -68,7 +67,7 @@ class Builds extends Component {
 
         let flexCenter = {
             display: 'flex',
-            justifyContent:'space-around'
+            justifyContent: 'space-around'
         }
 
         let text = {
@@ -128,7 +127,8 @@ class Builds extends Component {
                             <div style={flex}>
                                 Firebrand: <a id="builds" role="button" onClick={this.loadGuardian} data-toggle="modal">
                                 <img src={guardianLogo}/></a>
-                                DD/DF Elementalist<a id="builds" role="button" onClick={this.loadDDElementalist} data-toggle="modal"> <img
+                                DD/DF Elementalist<a id="builds" role="button" onClick={this.loadDDElementalist}
+                                                     data-toggle="modal"> <img
                                 src={elementalistLogo}/></a>
                                 Scourge: <a id="builds" role="button" onClick={this.loadNecro} data-toggle="modal"> <img
                                 src={necromancerLogo}/></a>
@@ -137,7 +137,7 @@ class Builds extends Component {
                                 Revenant: <a id="builds" role="button" onClick={this.loadRevenant} data-toggle="modal">
                                 <img src={revenantLogo}/></a>
                                 Staff Elementalist: <a id="builds" role="button" onClick={this.loadStaffElementalist}
-                                                 data-toggle="modal"> <img src={elementalistLogo}/></a>
+                                                       data-toggle="modal"> <img src={elementalistLogo}/></a>
                                 Warrior: <a id="builds" role="button" onClick={this.loadWarrior} data-toggle="modal">
                                 <img src={warriorLogo}/></a>
                             </div>

@@ -1,9 +1,8 @@
-import React,{Component} from 'react'
-import services from '../Services/services'
+import React, {Component} from 'react'
+import services from '../services/services'
 import Header from './Header'
-import RouterWeb from '../Components/Router/RouterWeb'
+import RouterMain from '../components/Router/RouterMain'
 import Builds from '../Layout/Builds'
-
 
 
 class Main extends Component {
@@ -37,15 +36,15 @@ class Main extends Component {
     }
 
 
-    async loadData (){
-        let response =  await services.loadData()
+    async loadData() {
+        let response = await services.loadData()
         // const json = await response.json();
 
         this.setState({totalData: response});
 
     }
 
-    async loadWeeklyData(){
+    async loadWeeklyData() {
         let response = await services.loadWeeklyData()
 
         this.setState({
@@ -55,20 +54,16 @@ class Main extends Component {
     }
 
 
-
-    render(){
-        return(
+    render() {
+        return (
             <div>
 
 
                 <header className="App-header">
                     <h1 className="App-title">Yaks Bend</h1>
                     <Header/>
-                    <RouterWeb
-                        totalData={this.state.totalData}
-                        weeklyData={this.state.weekly}
-                    loadMasterData={this.loadData}
-                    loadWeeklyData={this.loadWeeklyData}/>
+
+                    <RouterMain/>
                 </header>
 
                 <Builds/>

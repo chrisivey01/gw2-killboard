@@ -1,24 +1,23 @@
 import React, {Component} from 'react'
 import TotalKills from '../KillComponents/TotalKills'
 import WeeklyKills from '../KillComponents/WeeklyKills'
-import Discord from '../Discord'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {BrowserRouter as Router, Link, Route} from "react-router-dom";
 
 
-class RouterWeb extends Component {
+class RouterKills extends Component {
     constructor(props) {
         super(props)
 
     }
 
-    render()
-    {
+    render() {
         return (
             <Router>
                 <div className="routes">
                     <div className="routesContainer">
-                            <Link className="boards" onClick={this.props.loadWeeklyData} to="/weekly">Weekly Leaderboard</Link>
-                            <Link className="boards" onClick={this.props.loadMasterData} to="/top">Top Leaderboard</Link>
+                        <Link className="boards" onClick={this.props.loadWeeklyData} to="/weekly">Weekly
+                            Leaderboard</Link>
+                        <Link className="boards" onClick={this.props.loadMasterData} to="/top">Top Leaderboard</Link>
                     </div>
 
                     <hr/>
@@ -31,8 +30,6 @@ class RouterWeb extends Component {
                     <Route exact path='/top' render={(props) =>
                         (<TotalKills {...props} totalData={this.props.totalData}/>
                         )}/>
-
-                    <Route exact path='/' component={Discord}/>
                 </div>
             </Router>
         )
@@ -40,4 +37,4 @@ class RouterWeb extends Component {
 
 }
 
-export default RouterWeb;
+export default RouterKills;
