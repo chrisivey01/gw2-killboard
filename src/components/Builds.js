@@ -1,19 +1,20 @@
 import React from 'react'
-import {Route} from "react-router-dom";
-import Main from "./Main";
-import Kills from "./Kills";
+import services from '../services/Services'
 
 
-const Builds = () => {
+class Builds extends React.Component {
 
 
-    return (
 
-        <div>
+    render() {
+        return (
 
-            Builds is here
-        </div>
-    )
+            <div>
+
+                Under construction :D
+            </div>
+        )
+    }
 
 }
 

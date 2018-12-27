@@ -12,7 +12,9 @@ class Main extends Component {
 
     state = {
         weeklyTopKiller: '',
-        selected: 'home'
+        selected: 'home',
+        gears:{}
+
     }
 
 
@@ -24,6 +26,13 @@ class Main extends Component {
         this.setState({
             selected: e.target.id
         })
+    }
+
+    getGears = () => {
+        services.getGears()
+            .then(results => {
+                console.log(results)
+            })
     }
 
 
@@ -49,11 +58,12 @@ class Main extends Component {
                         selectTab={(e)=>this.selectTab(e)}
                         weeklyTopKiller={this.state.weeklyTopKiller}
                         selected={this.state.selected}
+                        getGears={()=>this.getGears()}
                     />
                 </div>
 
 
-                <Route path="/builds" component={Builds}/>
+                <Route path="/builds" component={()=> <Builds/>}/>
                 <Route path="/kills" component={Kills}/>
                 <div style={selected !== 'home' ? hide : null} className="flexContainer">
                     <div>

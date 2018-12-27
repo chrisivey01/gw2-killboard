@@ -39,7 +39,7 @@ const Header = (props) => {
                 </div>
                 <div style={center}>
                     <Link id='builds' className={props.selected === 'builds' ? 'active' : ''}
-                          onClick={(e) => props.selectTab(e)} to="/builds">
+                          onClick={(e) =>{ props.selectTab(e); props.getGears();}} to="/builds">
                         Builds
                     </Link>
                 </div>

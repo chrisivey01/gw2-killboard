@@ -14,7 +14,10 @@ export default {
             .then(response => response.json())
     },
 
-
+    getGears() {
+        return fetch(API + `/gears`)
+            .then(response => response.json())
+    },
 
     loadWeeklyTopKiller(){
         return fetch(API + '/topWeekly')
