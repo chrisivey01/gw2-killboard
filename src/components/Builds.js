@@ -1,20 +1,21 @@
 import React from 'react'
-import services from '../services/Services'
 
 
-class Builds extends React.Component {
+const Builds = (props) => {
 
+    let characterNames = props.gears
 
+    return (
 
-    render() {
-        return (
-
+        <div>
+            Under construction :D
             <div>
-
-                Under construction :D
+            {characterNames.map((eq,i) => {
+               return <button className="buttonFont" key={i}>{eq.character_name}</button>
+            })}
             </div>
-        )
-    }
+        </div>
+    )
 
 }
 

@@ -13,7 +13,7 @@ class Main extends Component {
     state = {
         weeklyTopKiller: '',
         selected: 'home',
-        gears:{}
+        gears:[]
 
     }
 
@@ -31,7 +31,9 @@ class Main extends Component {
     getGears = () => {
         services.getGears()
             .then(results => {
-                console.log(results)
+                this.setState({
+                    gears: results
+                })
             })
     }
 
@@ -63,7 +65,7 @@ class Main extends Component {
                 </div>
 
 
-                <Route path="/builds" component={()=> <Builds/>}/>
+                <Route path="/builds" component={()=> <Builds gears={this.state.gears}/>}/>
                 <Route path="/kills" component={Kills}/>
                 <div style={selected !== 'home' ? hide : null} className="flexContainer">
                     <div>
