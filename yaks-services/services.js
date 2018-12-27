@@ -30,7 +30,7 @@ app.get('/gears', function( req,res,next){
     // let api = req.body.api
     connection.query('SELECT * FROM uid_character_gear', (err, results) => {
         if (err) throw err;
-        res.send(results)
+        res.send((results))
     })
 })
 
