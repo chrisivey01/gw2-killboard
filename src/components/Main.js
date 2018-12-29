@@ -4,6 +4,7 @@ import Header from './Header'
 
 import services from '../services/Services'
 import {Route} from "react-router-dom";
+import Discord from "./Discord";
 import Kills from "./Kills";
 import Builds from "./Builds";
 
@@ -63,19 +64,9 @@ class Main extends Component {
                         getGears={()=>this.getGears()}
                     />
                 </div>
-
-
+                <Route path="/" exact component={()=> <Discord/>}/>
                 <Route path="/builds" component={()=> <Builds gears={this.state.gears}/>}/>
                 <Route path="/kills" component={Kills}/>
-                <div style={selected !== 'home' ? hide : null} className="flexContainer">
-                    <div>
-                        <iframe src="https://discordapp.com/widget?id=476902310581239810&theme=dark" width="350" height="500"
-                                allowtransparency="true" frameBorder="0"></iframe>
-                    </div>
-                    <div className="textAdjuster" >
-                        <label> Join the YB discord! </label>
-                    </div>
-                </div>
             </div>
         )
     }
