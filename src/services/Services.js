@@ -22,5 +22,35 @@ export default {
     loadWeeklyTopKiller(){
         return fetch(API + '/topWeekly')
             .then(results => results.json())
+    },
+
+    playersGear(character_name) {
+
+        return fetch(API + `/playersGear`,{
+            method: "POST",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body:JSON.stringify(character_name)
+        })
+            .then(response => response.json())
     }
 }
+
+
+
+// submitAPI(API, UID) {
+//     let data = {
+//         api: API,
+//         uid: UID
+//     }
+//     let url = api + '/submitAPI'
+//     return fetch(url, {
+//         method: "POST",
+//         headers: {
+//             "Content-type": "application/json"
+//         },
+//         body: JSON.stringify(data)
+//     })
+//         .then(results => results.json())
+// },

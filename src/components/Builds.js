@@ -1,22 +1,49 @@
 import React from 'react'
+import Services from '../services/Services'
+import {Link, Route} from 'react-router-dom'
+import ShowGearAndTraits from './ShowGearAndTraits'
 
 
-const Builds = (props) => {
 
-    let characterNames = props.gears
+class Builds extends React.Component {
 
-    return (
+    state = {
+        character_name:'',
+        gears:{}
+    }
+    loadGearsForCharacter = (name) => {
 
-        <div>
-            Under construction :D
+        let grabGears = Services.playersGear(name)
+
+        this.setState({
+            character_name:name,
+            gears: grabGears
+        })
+    }
+
+
+    render() {
+        let characterNames = this.props.gears
+        return (
+
             <div>
-            {characterNames.map((eq,i) => {
-               return <button className="buttonFont" key={i}>{eq.character_name}</button>
-            })}
-            </div>
-        </div>
-    )
+                Under construction :D
+                <div>
+                    {characterNames.map((eq, i) => {
+                        return <Link to={eq.character_name} className="buttonFont" key={i}>
+                            <button
+                                onClick={() => this.loadGearsForCharacter(eq.character_name)}>{eq.character_name}</button>
+                        </Link>
 
+                    })}
+
+                    {this.state.character_name !== '' ?
+                    <Route path={this.state.character_name} component={()=> <ShowGearAndTraits gears={this.state.gears}/>}/>
+    : null}
+                </div>
+            </div>
+        )
+    }
 }
 
 export default Builds;

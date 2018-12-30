@@ -25,6 +25,16 @@ var connection = mysql.createConnection({
 })
 
 
+app.get('/playersGear', function(req, res, next){
+    let characterName = req.body.character_name
+
+    connection.query('SELECT * FROM uid_character_gear WHERE character_name =' + characterName, (err, results) => {
+        if (err) throw err;
+        res.send(results)
+    })
+})
+
+
 app.get('/gears', function( req,res,next){
     // let uid = req.body.uid
     // let api = req.body.api
