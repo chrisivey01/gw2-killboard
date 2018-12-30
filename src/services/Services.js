@@ -26,14 +26,18 @@ export default {
 
     playersGear(character_name) {
 
+        let data = {
+            character_name: character_name
+        }
         return fetch(API + `/playersGear`,{
             method: "POST",
+            mode: "no-cors",
             headers: {
                 "Content-type": "application/json"
             },
-            body:JSON.stringify(character_name)
+            body:JSON.stringify(data)
         })
-            .then(response => response.json())
+            // .then(response => response.json())
     }
 }
 
