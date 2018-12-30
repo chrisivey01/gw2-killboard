@@ -25,6 +25,20 @@ var connection = mysql.createConnection({
 })
 
 
+// app.post('/patrol', function (req, res, next) {
+//     let arrayOfUids = req.body
+//     let activeUidsInDb = utils.getAllActiveUids(arrayOfUids, pool)
+//     let spys = utils.spyFinder(activeUidsInDb,pool, yaksbend, link)
+//
+//     console.log(activeUidsInDb)
+//     console.log(spys)
+//
+//
+//     res.send(spys)
+//     // let sql = `SELECT user_id, api_key, on_yaks FROM users WHERE user_id IN (?)`
+//     // results = await pool.query(sql, [memberUniqueIdArray])
+// })
+
 app.post('/playersGear', function(req, res, next){
     let characterName = req.body.character_name
 
