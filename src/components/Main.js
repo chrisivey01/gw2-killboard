@@ -43,12 +43,8 @@ class Main extends Component {
 
     loadGearsForCharacter = (name) => {
 
-        let grabGears;
         services.playersGear(name)
             .then(results => {
-
-
-
                 this.setState({
                     character_gear: results[0],
                     character_name: name,
@@ -73,7 +69,6 @@ class Main extends Component {
         const hide = {
             display: 'none'
         }
-        const {selected} = this.state
         return (
             <div>
                 <div className="header ">

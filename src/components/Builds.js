@@ -10,21 +10,21 @@ const Builds = (props) => {
     return (
 
         <div>
-            Under construction :D
+
             <div>
                 {characterNames.map((eq, i) => {
                     return <Link to={`/builds/character/${eq.character_name}`}
                                  onClick={() => props.loadGearsForCharacter(eq.character_name)} className="buttonFont"
                                  key={i}>
+                        <button>
                         {eq.character_name}
+                        </button>
                     </Link>
-
                 })}
 
-
             </div>
-            <Route exact path={`/builds/character/${props.character_name}`}
-                   component={() => <ShowGearAndTraits character_gear={props.character_gear}/>}/>
+            <Route path={`/builds/character/${props.character_name}`}
+                  exact component={() => <ShowGearAndTraits character_gear={props.character_gear}/>}/>
         </div>
     )
 }
