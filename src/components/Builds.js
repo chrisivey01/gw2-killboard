@@ -13,12 +13,19 @@ class Builds extends React.Component {
     }
     loadGearsForCharacter = (name) => {
 
-        let grabGears = Services.playersGear(name)
+        let grabGears;
+        Services.playersGear(name)
+            .then(results => {
+                grabGears = results;
 
-        this.setState({
-            character_name:name,
-            gears: grabGears
-        })
+                this.setState({
+                    character_name: name
+                })
+                this.setState({
+                    gears: grabGears
+                })
+            })
+
     }
 
 

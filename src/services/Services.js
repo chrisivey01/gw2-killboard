@@ -1,5 +1,5 @@
-// const API = 'http://localhost:3500'
- const API = 'http://54.175.138.146'
+const API = 'http://localhost:3500'
+//  const API = 'http://54.175.138.146'
 export default {
 
 
@@ -30,9 +30,7 @@ export default {
             character_name: character_name
         }
         return fetch(API + '/playersGear',{
-            credentials: 'include',
             method: "POST",
-            mode: "no-cors",
             headers: {
                 "Content-type": "application/json"
             },
