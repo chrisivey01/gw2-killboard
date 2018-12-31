@@ -14,7 +14,9 @@ class Main extends Component {
     state = {
         weeklyTopKiller: '',
         selected: 'home',
-        gears:[]
+        gears: [],
+        character_name: '',
+        character_gear: {}
 
     }
 
@@ -39,6 +41,24 @@ class Main extends Component {
     }
 
 
+    loadGearsForCharacter = (name) => {
+
+        let grabGears;
+        services.playersGear(name)
+            .then(results => {
+
+
+
+                this.setState({
+                    character_gear: results[0],
+                    character_name: name,
+                }, () => {
+                    console.log(this.state.character_name)
+                })
+            })
+    }
+
+
     topWeeklyKiller() {
         services.loadWeeklyTopKiller()
             .then(results => {
@@ -50,22 +70,25 @@ class Main extends Component {
     }
 
     render() {
-        const hide ={
-            display:'none'
+        const hide = {
+            display: 'none'
         }
-        const{selected} = this.state
+        const {selected} = this.state
         return (
             <div>
                 <div className="header ">
                     <Header
-                        selectTab={(e)=>this.selectTab(e)}
+                        selectTab={(e) => this.selectTab(e)}
                         weeklyTopKiller={this.state.weeklyTopKiller}
                         selected={this.state.selected}
-                        getGears={()=>this.getGears()}
+                        getGears={() => this.getGears()}
                     />
                 </div>
-                <Route path="/" exact component={()=> <Discord/>}/>
-                <Route path="/builds" component={()=> <Builds gears={this.state.gears}/>}/>
+                <Route path="/" exact component={() => <Discord/>}/>
+                <Route path="/builds" component={() => <Builds loadGearsForCharacter={this.loadGearsForCharacter}
+                                                               character_gear={this.state.character_gear}
+                                                               character_name={this.state.character_name}
+                                                               gears={this.state.gears}/>}/>
                 <Route path="/kills" component={Kills}/>
             </div>
         )

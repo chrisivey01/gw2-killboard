@@ -1,12 +1,14 @@
 import React from 'react'
 
 const ShowGearAndTraits = (props) => {
-    let characterGears = props.gears
+    let results = props.character_gear
+    delete results.uid;
+
 
     return (
         <div>
             <ul>
-                {characterGears.map((eq, i) => {
+                {Object.values(results).map((eq, i) => {
                        return <li>{eq}</li>
                     }
                 )}
