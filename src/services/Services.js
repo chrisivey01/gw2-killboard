@@ -1,5 +1,5 @@
-const API = 'http://localhost:3500'
-//  const API = 'http://54.175.138.146'
+// const API = 'http://localhost:3500'
+ const API = 'http://54.175.138.146'
 export default {
 
 
