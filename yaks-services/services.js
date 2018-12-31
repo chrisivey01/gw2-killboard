@@ -46,7 +46,7 @@ app.post('/playersGear', function(req, res, next){
 
     connection.query('SELECT * FROM uid_character_gear WHERE character_name = ?',characterName, (err, results) => {
         if (err) throw err;
-        res.send(results)
+        res.send((results))
     })
 })
 
