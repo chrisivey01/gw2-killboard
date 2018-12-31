@@ -29,7 +29,8 @@ export default {
         let data = {
             character_name: character_name
         }
-        return fetch(API + `/playersGear`,{
+        return fetch(API + '/playersGear',{
+            credentials: 'include',
             method: "POST",
             mode: "no-cors",
             headers: {

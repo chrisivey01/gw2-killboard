@@ -40,9 +40,11 @@ var connection = mysql.createConnection({
 // })
 
 app.post('/playersGear', function(req, res, next){
-    let characterName = req.body.character_name
+    // let characterName = req.body.character_name
+    let characterName = req.query.character_name
 
-    connection.query('SELECT * FROM uid_character_gear WHERE character_name =' + characterName, (err, results) => {
+
+    connection.query('SELECT * FROM uid_character_gear WHERE character_name = ?',characterName, (err, results) => {
         if (err) throw err;
         res.send(results)
     })
