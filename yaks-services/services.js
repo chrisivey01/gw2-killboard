@@ -43,10 +43,13 @@ app.post('/playersGear', function(req, res, next){
     let characterName = req.body.character_name
     // let characterName = req.query.character_name
 
+    console.log(characterName)
     let sql = 'SELECT * FROM uid_character_gear WHERE character_name = ?'
     connection.query(sql ,characterName, (err, results) => {
         if (err) throw err;
-        res.send((results))
+
+
+        res.send(results)
     })
 })
 
