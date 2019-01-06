@@ -31,6 +31,7 @@ export default {
         }
         return fetch(API + '/playersGear',{
             method: "POST",
+            mode: 'cors',
             headers: {
                 "Content-type": "application/json"
             },
