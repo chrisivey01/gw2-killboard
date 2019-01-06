@@ -51,10 +51,11 @@ app.post('/playersGear', function(req, res, next){
                 INNER JOIN uid_character_profession 
                 ON uid_character_gear.character_name=uid_character_profession.character_name
                 INNER JOIN uid_character_traits 
-                ON uid_character_gear.character_name=uid_character_traits.character_name;`
+                ON uid_character_gear.character_name=uid_character_traits.character_name
+                WHERE character_name = ?;`
                 
                 
-    connection.query(sql , (err, results) => {
+    connection.query(sql, characterName, (err, results) => {
         if (err) throw err;
 
 
