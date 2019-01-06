@@ -1,4 +1,6 @@
+//for local dev
 // const API = 'http://localhost:3500'
+//for prod
  const API = 'http://54.175.138.146'
 export default {
 
@@ -31,7 +33,6 @@ export default {
         }
         return fetch(API + '/playersGear',{
             method: "POST",
-            mode: 'cors',
             headers: {
                 "Content-type": "application/json"
             },
