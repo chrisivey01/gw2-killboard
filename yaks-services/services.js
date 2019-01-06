@@ -44,8 +44,17 @@ app.post('/playersGear', function(req, res, next){
     // let characterName = req.query.character_name
 
     console.log(characterName)
-    let sql = 'SELECT * FROM uid_character_gear WHERE character_name = ?'
-    connection.query(sql ,characterName, (err, results) => {
+    // let sql = 'SELECT * FROM uid_character_gear WHERE character_name = ?'
+
+    let sql = `SELECT uid_character_gear.character_name, profession, item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, profession, trait0, trait1, trait2, trait3, trait4, trait5, trait6, trait7, trait8
+                FROM uid_character_gear 
+                INNER JOIN uid_character_profession 
+                ON uid_character_gear.character_name=uid_character_profession.character_name
+                INNER JOIN uid_character_traits 
+                ON uid_character_gear.character_name=uid_character_traits.character_name;`
+                
+                
+    connection.query(sql , (err, results) => {
         if (err) throw err;
 
 

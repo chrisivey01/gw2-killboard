@@ -9,7 +9,7 @@ const Discord = () => {
                         allowTransparency="true" frameBorder="0"></iframe>
             </div>
             <div className="textAdjuster">
-                <label> Join the YB discord! </label>
+                <label style={{color:'blue'}}> Join the YB discord! </label>
             </div>
         </div>
     )
